@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" type="text/css" href="../estilo/estilofinal.css" media="screen">
+</head>
+
+<body>
+    <form name="" method="post" action="enviar.php">
+        <fieldset class="grupo">
+            <!-- Campo do nome com legenda "nome" e css de classe "campo" -->
+            <div class="campo">
+                <label for="nome"><strong>Nome</strong></label>
+                <input type="text" name="nome" value="José da Silva" id="nome" required>
+            </div>
+
+            <!-- Campo do sobrenome com legenda "sobrenome" e css de classe "campo" -->
+            <div class="campo">
+                <label for="telefone"><strong>Telefone</strong></label>
+                <input type="text" name="telefone" value="68 99123456" id="telefone" required>
+            </div>
+        </fieldset>
+
+        <div class="campo">
+            <label for="email"><strong>Email</strong></label>
+            <input type="email" name="email" value="josedasilva@gmail.com" id="email" required>
+        </div>
+
+        <!-- Campo de desenvolvimento web com 3 opções de botões selecionáveis (radio button) e css de classe "campo" -->
+        <div class="campo">
+            <label><strong>Selecione o seu gênero</strong></label>
+            <label>
+                <input type="radio" name="genero" value="masculino" checked>Masculino
+            </label>
+            <label>
+                <input type="radio" name="genero" value="feminino">Feminino
+            </label>
+        </div>
+
+        <!-- Botão para enviar o formulário -->
+        <input class="botao" value="concluido" type="submit">
+    </form>
+</body>
+
+</html>
