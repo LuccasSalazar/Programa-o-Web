@@ -9,7 +9,6 @@
 	<title>formulário</title>
 </head>
 
-
 <body>
 	<div id="ma">
 		<img id="lo" src="imagens/logo.png">
@@ -17,29 +16,29 @@
 	</div>
 	<br>
 	<!--Criando um formulário-->
-	<form action="cadastro.php" method="post">
+	<form action="cadastro.php" method="post" onsubmit="return validacao()">
 		<!--Criando um campo para o nome no formulário-->
 		<label for="name">Nome completo:</label>
 		<br>
-		<input type="text" id="name" name="name">
+		<input type="text" id="name" class="obrigatorio" name="name">
 		<br><br>
 		<!--Criando um campo de data de nascimento-->
 		<label for="nascimento">Data de nascimento:</label>
 		<br>
-		<input type="date" id="date" name="date">
+		<input type="date" id="date" class="obrigatorio" name="date">
 		<br><br>
 		<!--Criando um campo para um e-mail-->
 		<label for="email">E-mail:</label>
 		<br>
-		<input type="email" id="email" name="email">
+		<input type="email" id="email" class="obrigatorio" name="email">
 		<br><br>
 		<!--Criando um campo para uma senha-->
 		<label for="senha">Senha:</label>
 		<br>
-		<input type="password" id="password" name="password">
+		<input type="password" id="password" class="obrigatorio" name="password">
 		<br><br>
 		<!--Botão para acionar o action do formulário-->
-		<input type="submit" id="enviar" name="enviar" value="Enviar" onclick="return validacao">
+		<input type="submit" id="enviar" name="enviar" value="Enviar">
 	</form>
 	<div id="logos">
 		<a href="https://www.tiktok.com/pt-BR/"><img class="im" src="imagens/tiktok.png" alt="Logo do Tiktok"></a>
@@ -52,18 +51,26 @@
 		<p id="oi">Copyright © 2022</p>
 	</footer>
 
-    <script type="text/javascript">
-        function validacao()
-        if(document.getElementById("name").value.lenghth == 0 || document.getElementById("data").value.lenghth == 0 ||){
-            alert ("Por favor, preencha o campo nome.")
-            return false
-        }
-        
-        else{
-            document.getElementById("enviar").submit()
-            true
-        }
-    </script>
+	<script type="text/javascript">
+		function validacao() {
+			var dados = document.getElementsByClassName("obrigatorio")
+			var tamanho = dados.length
+			var temAlguemVazio = false
+			for (var i = 0; i < tamanho; i++) {
+				if (dados[1].value == '') {
+					temAlguemVazio = true
+					break
+				}
+			}
+			if (temAlguemVazio) {
+				alert('Por favor, preencha todos os campos.')
+				return false
+			}
+			else {
+				return true
+			}
+		}
+	</script>
 </body>
 
 </html>
